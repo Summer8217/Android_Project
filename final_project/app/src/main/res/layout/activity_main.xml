@@ -96,11 +96,24 @@
         android:id="@+id/btnEND"
         android:layout_width="93dp"
         android:layout_height="55dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="24dp"
         android:onClick="End"
         android:text="離開"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/button_check_all" />
+
+    <Button
+        android:id="@+id/button_check_all"
+        android:layout_width="126dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:text="查看所有星座"
+        android:onClick="CheckAllConstellations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="OnClick" />
 </androidx.constraintlayout.widget.ConstraintLayout>

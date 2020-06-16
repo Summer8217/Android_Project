@@ -63,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void CheckAllConstellations(View view) {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, CheckAllConstellations.class);
+        startActivity(intent);
+    }
+
 
     public void End (View view){
         //以對話框確認是否要關閉視窗
