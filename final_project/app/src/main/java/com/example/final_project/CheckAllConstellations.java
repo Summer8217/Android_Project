@@ -38,7 +38,7 @@ public class CheckAllConstellations extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         initializeData();
 
-        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        /*ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                 int from = viewHolder.getAdapterPosition();
@@ -54,7 +54,7 @@ public class CheckAllConstellations extends AppCompatActivity {
                 mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
             }
         });
-        helper.attachToRecyclerView(mRecyclerView);
+        helper.attachToRecyclerView(mRecyclerView);*/
     }
     private void initializeData() {
         // Get the resources from the XML file.
