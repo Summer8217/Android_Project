@@ -83,7 +83,7 @@ public class ConstellationAdapter extends RecyclerView.Adapter<ConstellationAdap
         private TextView mTitleText;
         private TextView mInfoText;
         private ImageView mSportsImage;
-
+        private TextView mDetail;
         /**
          * Constructor for the ViewHolder, used in onCreateViewHolder().
          *
@@ -111,6 +111,7 @@ public class ConstellationAdapter extends RecyclerView.Adapter<ConstellationAdap
             Constellations currentSport = mSportsData.get(getAdapterPosition());
             Intent detailIntent = new Intent(mContext, ConstellationDetail.class);
             detailIntent.putExtra("title", currentSport.getTitle());
+            detailIntent.putExtra("detail",currentSport.getDetail());
             detailIntent.putExtra("image_resource", currentSport.getImageResource());
             mContext.startActivity(detailIntent);
         }

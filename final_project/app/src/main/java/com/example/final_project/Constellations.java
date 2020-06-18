@@ -4,6 +4,7 @@ public class Constellations {
     // Member variables representing the title and information about the sport.
     private String title;
     private String info;
+    private String detail;
     private final int imageResource;
 
     /**
@@ -12,9 +13,10 @@ public class Constellations {
      * @param title The name if the sport.
      * @param info  Information about the sport.
      */
-    Constellations(String title, String info, int imageResource) {
+    Constellations(String title, String info, int imageResource, String ConstellationDetail) {
         this.title = title;
         this.info = info;
+        this.detail = ConstellationDetail;
         this.imageResource = imageResource;
     }
 
@@ -35,6 +37,8 @@ public class Constellations {
     String getInfo() {
         return info;
     }
+
+    String getDetail(){ return detail; }
 
     public int getImageResource() {
         return imageResource;

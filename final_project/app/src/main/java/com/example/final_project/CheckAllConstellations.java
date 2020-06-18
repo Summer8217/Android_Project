@@ -38,7 +38,7 @@ public class CheckAllConstellations extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         initializeData();
 
-        /*ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                 int from = viewHolder.getAdapterPosition();
@@ -54,7 +54,7 @@ public class CheckAllConstellations extends AppCompatActivity {
                 mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
             }
         });
-        helper.attachToRecyclerView(mRecyclerView);*/
+        helper.attachToRecyclerView(mRecyclerView);
     }
     private void initializeData() {
         // Get the resources from the XML file.
@@ -62,6 +62,7 @@ public class CheckAllConstellations extends AppCompatActivity {
                 .getStringArray(R.array.sports_titles);
         String[] sportsInfo = getResources()
                 .getStringArray(R.array.sports_info);
+        String[] ConstellationDetail1 = getResources().getStringArray(R.array.constellation_info);
         // typed array allows storing array of some XML resources
         sportsImageResources = getResources().obtainTypedArray(R.array.sports_images);
 
@@ -71,7 +72,7 @@ public class CheckAllConstellations extends AppCompatActivity {
         // Create the ArrayList of Sports objects with titles and
         // information about each sport.
         for (int i = 0; i < sportsList.length; i++) {
-            mSportsData.add(new Constellations(sportsList[i], sportsInfo[i], sportsImageResources.getResourceId(i, 0)));
+            mSportsData.add(new Constellations(sportsList[i], sportsInfo[i], sportsImageResources.getResourceId(i, 0),ConstellationDetail1[i]));
         }
         sportsImageResources.recycle();
         // Notify the adapter of the change.

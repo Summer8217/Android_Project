@@ -18,12 +18,14 @@ public class ConstellationDetail extends AppCompatActivity{
 
         TextView sportsTitle = findViewById(R.id.titleDetail);
         ImageView sportsImage = findViewById(R.id.sportsImageDetail);
-
+        TextView ConstellationInfo = findViewById(R.id.subTitleDetail);
         Intent intent = getIntent();
         String titleString = intent.getStringExtra("title");
+        String SubDetail = intent.getStringExtra("detail");
         int imageInt = intent.getIntExtra("image_resource", 0);
 
         sportsTitle.setText(titleString);
+        ConstellationInfo.setText(SubDetail);
         Glide.with(this).load(imageInt).into(sportsImage);
     }
 }
