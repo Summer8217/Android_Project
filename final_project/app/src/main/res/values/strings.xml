@@ -1,51 +1,139 @@
 <resources>
     <string name="app_name">final_project</string>
     <string name="title_placeholder">Title</string>
-    <string name="news_placeholder">News</string>
+    <string name="news_placeholder">More Information</string>
     <string name="sports_info_placeholder">Here is some news</string>
     <string name="sports_image">sports image</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
 
     <string-array name="sports_titles">
-        <item>Baseball</item>
-        <item>Badminton</item>
-        <item>Basketball</item>
-        <item>Bowling</item>
-        <item>Cycling</item>
-        <item>Golf</item>
-        <item>Running</item>
-        <item>Soccer</item>
-        <item>Swimming</item>
-        <item>Table Tennis</item>
-        <item>Tennis</item>
+        <item>牡羊座</item>
+        <item>金牛座</item>
+        <item>雙子座</item>
+        <item>巨蟹座</item>
+        <item>獅子座</item>
+        <item>處女座</item>
+        <item>天秤座</item>
+        <item>天蠍座</item>
+        <item>射手座</item>
+        <item>摩羯座</item>
+        <item>水瓶座</item>
+        <item>雙魚座</item>
     </string-array>
 
     <array name="sports_images">
-        <item>@drawable/img_baseball</item>
-        <item>@drawable/img_badminton</item>
-        <item>@drawable/img_basketball</item>
-        <item>@drawable/img_bowling</item>
-        <item>@drawable/img_cycling</item>
-        <item>@drawable/img_golf</item>
-        <item>@drawable/img_running</item>
-        <item>@drawable/img_soccer</item>
-        <item>@drawable/img_swimming</item>
-        <item>@drawable/img_tabletennis</item>
-        <item>@drawable/img_tennis</item>
+        <item>@drawable/goat</item>
+        <item>@drawable/ox</item>
+        <item>@drawable/twin</item>
+        <item>@drawable/crab</item>
+        <item>@drawable/lion</item>
+        <item>@drawable/virgin</item>
+        <item>@drawable/even</item>
+        <item>@drawable/scorpoin</item>
+        <item>@drawable/shooter</item>
+        <item>@drawable/idkwtf</item>
+        <item>@drawable/bottle</item>
+        <item>@drawable/fish</item>
     </array>
+    <string-array name="constellation_info">
+        <item>
+                白羊座生於每年3月21日至4月20日，火星的本質為陽性，是天上火紅色的天體，給人勇猛的感覺，故此以戰神馬斯命名，象徵勇氣、剛強、鬥志與男性魅力，掌管個人的衝勁與慾望，對群體具一定影響力。
 
+                優點：朝氣蓬勃、熱情坦率、慷慨真誠、堅強勇敢、董卓敏捷、有毅力
+
+                缺點：不能忍受批評、急躁、好鬥
+        </item>
+        <item>
+                金牛座生於每年4月21日至5月20日，金星的本質為陰性，是天上金色的迷人天體，故此以愛神維納斯命名，象徵愛情與美麗，支配女性魅力與吸引異性的能力，影響個人的審美眼光、美感、社交能力和價值觀。
+
+                優點：有主見、意志堅定、熱情、友善、有耐心及責任感、可以信賴、實際、具有商業頭腦和老考的價值觀、富美感、喜歡美食和精緻昂貴的奢侈品
+
+                缺點：貪婪、頑固、嫉妒心重、占有欲強、懶惰、古板、缺乏應變力、自我放縱、易怒
+        </item>
+        <item>
+                雙子座生於每年5月21日至6月21日，水星移動的速度非常快，掌管個人的知識、溝通、推理，以及學習能力、處理困難時的機智、適應環境的能力與個人意識，同時代表了時代轉變時科技與學問對日常生活轉變的影響。
+
+                優點：適應力強、機智、敏捷、喜歡忙碌和變化、主動、活波而健談、聰慧且多才多藝、具有寫作和語言方面的天才、對時尚有著敏銳的感受力、能夠永久維持著年輕和時髦的外貌
+
+                缺點：懷疑心重、善變、多重性格、缺乏耐性、狡猾、不安分、過人的精力未能發揮時則脾氣暴躁且喋喋不休
+        </item>
+        <item>
+                巨蟹座生於每年6月22日至7月22日月亮對個人感情的影響力大過太陽。在天象中，月亮的變化最大，有周期性的陰晴圓缺，代表情緒變化，感情起伏，愛與恨的反覆出現。月亮代表支配我們的內在世界，是人性及本能的天象表現。月亮守護巨蟹座，月亮也是母性的守護者，照明器材是巨蟹座的幸運物。
+
+                優點：善良、熱心、敏感、富有同情心、長於記憶、腦筋敏銳、領悟性好、適應力佳、有高度的想像力、具有強烈的母性和父性的本能、保護色彩濃厚、謹慎、節儉、具有堅強的意志力和耐力、不屈不繞、理財觀念甚佳、愛國、忠於愛情、重視家庭的溫暖與安定、擅力理家務、重視家庭的和諧、是所有星座中最具有家庭觀念的星座
+
+                缺點：天性多疑且情緒化致難以取悅、嫉妒心強並有戀母情緒、可能因過度敏感而導致自憐、個性善變、不穩定、有事因生活態度太認真而使之無趣、心胸狹窄、苛刻、貪吃、邋遢、喜歡被奉承
+        </item>
+        <item>
+                獅子座生於每年7月23日至8月22日，太陽是天象中影響力最大的天體，它是天地萬物的中心，黃道就是太陽在天上運行的軌跡。太陽支配我們的外在世界，是活力的泉源、戰勝黑暗和疾病的力量、天地萬物的依歸。
+
+                優點：為人博愛、熱心、慷慨、有領導方面的天賦
+
+                缺點：主觀意識太強、熱心、自以為是、偏激、無法容忍、與自己相左的觀點、自視過高、勢力、仗勢欺人、好管閒事
+        </item>
+        <item>
+                處女座生於每年8月23日至9月22日，水星移動的速度非常快，掌管個人的知識、溝通、推理，以及學習能力、處理困難時的機智、適應環境的能力與個人意識，同時代表了時代轉變時科技與學問對日常生活轉變的影響。水星守護雙子座與處女座。
+
+                優點：謙虛、喜歡整潔、處事小心、頭腦清晰而分析能力強、能明辨是非
+
+                缺點：喜歡雞蛋裡挑骨頭、要求太高以致吹毛求疵、多愁善感、小題大做、古板、難於取悅
+        </item>
+        <item>
+                天秤座生於每年9月23日至10月23日，是在夏天之夜出現於銀河西邊的星座，星座之符號正象徵著天秤的兩個盤子，天秤座守護星為金星，它守護神是正義女神忒彌斯阿斯托莉亞與愛情女神維納斯。
+
+                優點：外型高雅、擅長交際、個性平易近人、注重羅曼蒂克的浪漫情調、理想主義者、具有迷人的性格特徵、對和諧而愉快的生活環境十分珍惜
+
+                缺點：容易生氣、個性輕浮、善變、做事猶疑不定、優柔寡斷而難以下決定、喜歡賣弄風情、對事情沒有主見、容易受騙
+        </item>
+        <item>
+                天蠍座生於每年10月24日至11月21日，火星的本質為陽性，是天上火紅色的天體，給人勇猛的感覺，故此以戰神馬斯命名，象徵勇氣、剛強、鬥志與女性魅力，掌管個人的衝勁與慾望，對群體具一定影響力。火星守護白羊座與天蠍座。
+
+                優點：有謀略、富動悉事物重點的能力、情緒十分敏感、感情細膩而富有豐富的想像力、果決、實際而熱情、主觀意強、意志堅定、有毅力、一般人容易厭倦而逃避的事情、他往往能堅忍固執地做下去、機敏、聰明、悟性高、富直覺能力
+
+                缺點：有干涉別人事情的傾向、衝動、急進、善妒、易怒、頑固、倔犟、難駕馭、多疑、善變、心機較深、太感情用事、好冒險、常有狂妄的夢想、對於食物美酒長會過度沉溺、個性陰險、冷漠、時常利用詭計與機智去擊敗敵人
+        </item>
+        <item>
+                射手座生於每年11月22日至12月21日，木星在中國及西洋星相學中同樣被視為幸運星，代表天賦與靈性。由於木星每年經過一個星座，故又稱為歲星，支配個人在不同時期追求的領域。它亦代表法律與正義，支配善與惡、賞與罰。
+
+                優點：樂觀、活潑、坦率、自尊心強、多才多藝、有很高的智慧、頗富直覺與鼓勵他人的力量、是想開朗、適應力強、有很好的判斷力、有處事緊急事務的才能、擅長哲學思考、富有崇高的正義感、非常敏感而聰慧、喜愛自由、誠懇、正直、可靠、慎重
+
+                缺點：個性敏感而有點浮躁、好吹噓、喜誇張、沒有責任感、有不安分的傾向、盲目而過分樂觀、粗心偏激行事有些笨
+        </item>
+        <item>
+                摩羯座生於每年12月22日至1月19日，土星是西洋占星術中唯一有光環的天體，繞黃道一周約需三十年，代表人生的起落，責任與負擔、磨練與成長的方向。它是傳統西洋占星術中變化最少的天體，所以也是頑固與耐性的象徵，土星支配個人的現實生活。
+
+                優點：保守、謹慎、實際、有責任感、可靠、機智、有主見、尊敬權威、看重自己、有抱負、守紀律
+
+                缺點：悲觀、善變、外表冷漠嚴肅、不易親近、墨守成規、吝嗇
+        </item>
+        <item>
+                水瓶座生於每年1月20日至2月18日，土星是西洋占星術中唯一有光環的天體，繞黃道一周約需三十年，代表人生的起落，責任與負擔、磨練與成長的方向。它是傳統西洋占星術中變化最少的天體，所以也是頑固與耐性的象徵，土星支配個人的現實生活。
+
+                優點：求知慾強、獨立、博愛、友善、忠實、可靠、有創意、有遠見、有智慧、思想新穎、頭老敏銳、善於觀察、富有改革精神
+
+                缺點：個性怪異、過分執著、標新立異、易誇大問題、固執、墨守成規、不知變通、過於理想主義、倔犟、偏激、叛逆、不合群
+        </item>
+        <item>
+                雙魚座生於每年2月19日至3月20日，木星在中國及西洋星相學中同樣被視為幸運星，代表天賦與靈性。由於木星每年經過一個星座，故又稱為歲星，支配個人在不同時期追求的領域。它亦代表法律與正義，支配善與惡、賞與罰。木星守護射手座與雙魚座。處女座天生勞碌命，加班加點是家常便飯，再加上就業壓力，因此處女座總是人前馬後屁顛屁顛地跟著，唯恐一不留神被老闆炒了魷魚。當處女座不回家，手機又處於關機狀態時，雙魚座就開始瞎猜了：如果TA的手機是沒電，TA當初是否是故意不多配一塊電池，如果是有意關機，那麼TA和誰在一起。雙魚座的想像力是瘋狂的，能夠想像到處女座和別的異性在床上廝混的熱烈情景，雙魚座絕望得要自殺。而對抗一個不忠情人的最佳方式不外乎是，變本加厲的不忠。行為出軌的下一步即是精神出軌，這個時候，虛情假意地再去維護當初這份感情，已經沒有意義了。
+
+                優點：天真、清純、溫柔而富於直覺、謙虛、敏感、善解人意、感情豐富、脫俗、適應能力強、仁慈、富有同情心、多才多藝
+
+                缺點：粗心、浮躁、缺乏自信而意志薄弱、優柔寡斷、散浸、不切實際
+        </item>
+    </string-array>
     <string-array name="sports_info">
-        <item>Here is some Baseball news!</item>
-        <item>Here is some Badminton news!</item>
-        <item>Here is some Basketball news!</item>
-        <item>Here is some Bowling news!</item>
-        <item>Here is some Cycling news!</item>
-        <item>Here is some Golf news!</item>
-        <item>Here is some Running news!</item>
-        <item>Here is some Soccer news!</item>
-        <item>Here is some Swimming news!</item>
-        <item>Here is some Table Tennis news!</item>
-        <item>Here is some Tennis news!</item>
+        <item>關於雙魚座</item>
+        <item>關於金牛座</item>
+        <item>關於雙子座</item>
+        <item>關於巨蟹座</item>
+        <item>關於獅子座</item>
+        <item>關於處女座</item>
+        <item>關於天秤座</item>
+        <item>關於天蠍座</item>
+        <item>關於射手座</item>
+        <item>關於摩羯座</item>
+        <item>關於水瓶座</item>
+        <item>關於雙魚座</item>
     </string-array>
 
     <string-array name="month">
