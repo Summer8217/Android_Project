@@ -1,10 +1,11 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <string name="app_name">final_project</string>
     <string name="title_placeholder">Title</string>
     <string name="news_placeholder">More Information</string>
     <string name="sports_info_placeholder">Here is some news</string>
     <string name="sports_image">sports image</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
+    <string name="about">開發人員</string>
 
     <string-array name="sports_titles">
         <item>牡羊座</item>

@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -25,7 +28,24 @@ public class MainActivity extends AppCompatActivity {
         spD = findViewById(R.id.spinnerD);
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu1, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.about:
+                goAbout();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     public  void Calculate(View view){
         //指定字串陣列，對應到資源檔的字串陣列
         String[] Sm =getResources().getStringArray(R.array.month);
@@ -60,6 +80,14 @@ public class MainActivity extends AppCompatActivity {
         itgo2.putExtra("m", m);
         itgo2.putExtra("d", d);
         startActivity(itgo2);
+
+    }
+
+    public void goAbout() {
+        //將日期傳至下一個頁面
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, About.class);
+        startActivity(intent);
 
     }
 
