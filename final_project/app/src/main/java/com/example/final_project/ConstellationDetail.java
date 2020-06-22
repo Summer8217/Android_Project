@@ -20,9 +20,9 @@ public class ConstellationDetail extends AppCompatActivity{
         ImageView sportsImage = findViewById(R.id.sportsImageDetail);
         TextView ConstellationInfo = findViewById(R.id.subTitleDetail);
         Intent intent = getIntent();
-        String titleString = intent.getStringExtra("title");
-        String SubDetail = intent.getStringExtra("detail");
-        int imageInt = intent.getIntExtra("image_resource", 0);
+        String titleString = intent.getStringExtra("title");        //取得title
+        String SubDetail = intent.getStringExtra("detail");         //取得描述
+        int imageInt = intent.getIntExtra("image_resource", 0);     //取得圖片
 
         sportsTitle.setText(titleString);
         ConstellationInfo.setText(SubDetail);

@@ -110,9 +110,9 @@ public class ConstellationAdapter extends RecyclerView.Adapter<ConstellationAdap
         public void onClick(View v) {
             Constellations currentSport = mSportsData.get(getAdapterPosition());
             Intent detailIntent = new Intent(mContext, ConstellationDetail.class);
-            detailIntent.putExtra("title", currentSport.getTitle());
-            detailIntent.putExtra("detail",currentSport.getDetail());
-            detailIntent.putExtra("image_resource", currentSport.getImageResource());
+            detailIntent.putExtra("title", currentSport.getTitle());            //將data傳入另一個activity
+            detailIntent.putExtra("detail",currentSport.getDetail());           //將data傳入另一個activity
+            detailIntent.putExtra("image_resource", currentSport.getImageResource());   //將data傳入另一個activity
             mContext.startActivity(detailIntent);
         }
     }
