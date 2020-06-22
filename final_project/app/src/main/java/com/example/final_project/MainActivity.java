@@ -2,15 +2,20 @@ package com.example.final_project;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import android.os.Bundle;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Trace;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import javax.xml.transform.TransformerConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu1, menu);
+        int nightMode = AppCompatDelegate.getDefaultNightMode();
+        if (nightMode == AppCompatDelegate.MODE_NIGHT_YES){
+            menu.findItem(R.id.night_mode).setTitle(R.string.day_mode);
+        }
+        else{
+            menu.findItem(R.id.night_mode).setTitle(R.string.night_mode);
+        }
         return true;
     }
 
@@ -41,6 +53,18 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.about:
                 goAbout();
+                return true;
+            case R.id.night_mode:
+                int nightMode = AppCompatDelegate.getDefaultNightMode();
+                if (nightMode == AppCompatDelegate.MODE_NIGHT_YES){
+                    Toast.makeText(this,"aaa",Toast.LENGTH_SHORT).show();
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+                else {
+                    Toast.makeText(this,"bbb",Toast.LENGTH_SHORT).show();
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+                recreate();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
