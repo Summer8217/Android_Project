@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Constellation1"
-            android:label = "Second Activity"
+            android:label = "Your Constellation"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

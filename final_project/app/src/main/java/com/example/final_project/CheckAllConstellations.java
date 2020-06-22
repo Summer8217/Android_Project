@@ -102,10 +102,8 @@ public class CheckAllConstellations extends AppCompatActivity {
         String[] ConstellationDetail1 = getResources().getStringArray(R.array.constellation_info);
         // typed array allows storing array of some XML resources
         sportsImageResources = getResources().obtainTypedArray(R.array.sports_images);
-
         // Clear the existing data (to avoid duplication).
         mSportsData.clear();
-
         // Create the ArrayList of Sports objects with titles and
         // information about each sport.
         for (int i = 0; i < sportsList.length; i++) {
