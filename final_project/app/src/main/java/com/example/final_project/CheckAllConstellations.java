@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,9 +27,9 @@ public class CheckAllConstellations extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_constellations);
         mRecyclerView = findViewById(R.id.RecycleView1);
-
+        int gridColumnCount = getResources().getInteger(R.integer.grid_column_count);
         // Set the Layout Manager.
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+       // mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize the ArrayList that will contain the data.
         mSportsData = new ArrayList<>();
@@ -38,19 +39,55 @@ public class CheckAllConstellations extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         initializeData();
 
-        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        mRecyclerView.setLayoutManager(new GridLayoutManager(
+                this, gridColumnCount));
+
+        int swipeDirs;
+        if(gridColumnCount > 1){
+            swipeDirs = 0;
+        } else {
+            swipeDirs = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+        }
+        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper
+                .SimpleCallback(
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT |
+                        ItemTouchHelper.DOWN | ItemTouchHelper.UP,
+                swipeDirs) {
+            /**
+             * Defines the drag and drop functionality.
+             *
+             * @param recyclerView The RecyclerView that contains the list items.
+             * @param viewHolder The SportsViewHolder that is being moved.
+             * @param target The SportsViewHolder that you are switching the
+             *               original one with.
+             * @return returns true if the item was moved, false otherwise
+             */
             @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            public boolean onMove(RecyclerView recyclerView,
+                                  RecyclerView.ViewHolder viewHolder,
+                                  RecyclerView.ViewHolder target) {
+                // Get the from and to positions.
                 int from = viewHolder.getAdapterPosition();
                 int to = target.getAdapterPosition();
+
+                // Swap the items and notify the adapter.
                 Collections.swap(mSportsData, from, to);
                 mAdapter.notifyItemMoved(from, to);
                 return true;
             }
 
+            /**
+             * Defines the swipe to dismiss functionality.
+             *
+             * @param viewHolder The viewholder being swiped.
+             * @param direction The direction it is swiped in.
+             */
             @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            public void onSwiped(RecyclerView.ViewHolder viewHolder,
+                                 int direction) {
+                // Remove the item from the dataset.
                 mSportsData.remove(viewHolder.getAdapterPosition());
+                // Notify the adapter.
                 mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
             }
         });
