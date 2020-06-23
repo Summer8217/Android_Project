@@ -1,5 +1,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <string name="app_name">final_project</string>
+    <string name="app_name">星座查詢幫手</string>
     <string name="title_placeholder">Title</string>
     <string name="news_placeholder">More Information</string>
     <string name="sports_info_placeholder">Here is some news</string>

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Trace;
+import android.transition.Explode;
+import android.transition.Fade;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,7 +20,9 @@ import android.widget.Toast;
 import javax.xml.transform.TransformerConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static final String ANIMATION = "Animation";
+    public static final String EXPLODE_ANIMATION = "Explode Animation";
+    public static final String FADE_TRANSITION = "Fade Transition";
     Spinner spM, spD;
     public static final int TEXT_REQUEST = 1;
     int m,d;
