@@ -18,9 +18,9 @@ import java.util.Collections;
 
 public class CheckAllConstellations extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-    private ArrayList<Constellations> mSportsData;
+    private ArrayList<Constellations> mConstellationsData;
     private ConstellationAdapter mAdapter;
-    private TypedArray sportsImageResources;
+    private TypedArray ConstellationsImageResources;
     private static final String BUNDLE_KEY = "Sports_data";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +32,10 @@ public class CheckAllConstellations extends AppCompatActivity {
        // mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize the ArrayList that will contain the data.
-        mSportsData = new ArrayList<>();
+        mConstellationsData = new ArrayList<>();
 
         // Initialize the adapter and set it to the RecyclerView.
-        mAdapter = new ConstellationAdapter(this, mSportsData);
+        mAdapter = new ConstellationAdapter(this, mConstellationsData);
         mRecyclerView.setAdapter(mAdapter);
         initializeData();
 
@@ -71,7 +71,7 @@ public class CheckAllConstellations extends AppCompatActivity {
                 int to = target.getAdapterPosition();
 
                 // Swap the items and notify the adapter.
-                Collections.swap(mSportsData, from, to);
+                Collections.swap(mConstellationsData, from, to);
                 mAdapter.notifyItemMoved(from, to);
                 return true;
             }
@@ -86,7 +86,7 @@ public class CheckAllConstellations extends AppCompatActivity {
             public void onSwiped(RecyclerView.ViewHolder viewHolder,
                                  int direction) {
                 // Remove the item from the dataset.
-                mSportsData.remove(viewHolder.getAdapterPosition());
+                mConstellationsData.remove(viewHolder.getAdapterPosition());
                 // Notify the adapter.
                 mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
             }
@@ -95,21 +95,21 @@ public class CheckAllConstellations extends AppCompatActivity {
     }
     private void initializeData() {
         // Get the resources from the XML file.
-        String[] sportsList = getResources()
-                .getStringArray(R.array.sports_titles);
-        String[] sportsInfo = getResources()
+        String[] ConstellationsList = getResources()
+                .getStringArray(R.array.constellations_titles);
+        String[] ConstellationsInfo = getResources()
                 .getStringArray(R.array.sports_info);
         String[] ConstellationDetail1 = getResources().getStringArray(R.array.constellation_info);
         // typed array allows storing array of some XML resources
-        sportsImageResources = getResources().obtainTypedArray(R.array.sports_images);
+        ConstellationsImageResources = getResources().obtainTypedArray(R.array.constellations_images);
         // Clear the existing data (to avoid duplication).
-        mSportsData.clear();
+        mConstellationsData.clear();
         // Create the ArrayList of Sports objects with titles and
         // information about each sport.
-        for (int i = 0; i < sportsList.length; i++) {
-            mSportsData.add(new Constellations(sportsList[i], sportsInfo[i], sportsImageResources.getResourceId(i, 0),ConstellationDetail1[i]));
+        for (int i = 0; i < ConstellationsList.length; i++) {
+            mConstellationsData.add(new Constellations(ConstellationsList[i], ConstellationsInfo[i], ConstellationsImageResources.getResourceId(i, 0),ConstellationDetail1[i]));
         }
-        sportsImageResources.recycle();
+        ConstellationsImageResources.recycle();
         // Notify the adapter of the change.
         mAdapter.notifyDataSetChanged();
     }

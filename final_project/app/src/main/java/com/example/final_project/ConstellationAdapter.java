@@ -82,7 +82,7 @@ public class ConstellationAdapter extends RecyclerView.Adapter<ConstellationAdap
         // Member Variables for the TextViews
         private TextView mTitleText;
         private TextView mInfoText;
-        private ImageView mSportsImage;
+        private ImageView mConstellationsImage;
         private TextView mDetail;
         /**
          * Constructor for the ViewHolder, used in onCreateViewHolder().
@@ -94,7 +94,7 @@ public class ConstellationAdapter extends RecyclerView.Adapter<ConstellationAdap
             // Initialize the views.
             mTitleText = itemView.findViewById(R.id.title);
             mInfoText = itemView.findViewById(R.id.subTitle);
-            mSportsImage = itemView.findViewById(R.id.sportsImage);
+            mConstellationsImage = itemView.findViewById(R.id.constellationsImage);
             itemView.setOnClickListener(this);
         }
 
@@ -102,7 +102,7 @@ public class ConstellationAdapter extends RecyclerView.Adapter<ConstellationAdap
             // Populate the TextViews with data.
             mTitleText.setText(currentSport.getTitle());
             mInfoText.setText(currentSport.getInfo());
-            Glide.with(mContext).load(currentSport.getImageResource()).into(mSportsImage);
+            Glide.with(mContext).load(currentSport.getImageResource()).into(mConstellationsImage);
 
         }
 

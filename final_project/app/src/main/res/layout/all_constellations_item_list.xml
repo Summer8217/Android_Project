@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/sportsImage"
+            android:id="@+id/constellationsImage"
             android:adjustViewBounds="true"
             android:contentDescription="@string/sports_image"
             android:transitionName="sportImageSharedTransition"
@@ -21,7 +21,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/sportsImage"
+            android:layout_alignBottom="@id/constellationsImage"
             android:padding="8dp"
             android:text="@string/title_placeholder"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -31,7 +31,7 @@
             android:id="@+id/newsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sportsImage"
+            android:layout_below="@id/constellationsImage"
             android:textColor="?android:textColorSecondary"
             android:padding="8dp"
             android:text="@string/news_placeholder" />

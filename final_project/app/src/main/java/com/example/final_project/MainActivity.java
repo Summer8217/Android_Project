@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -144,5 +145,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         adb.show();
+    }
+
+    public void Cure(View view){
+        Uri uri = Uri.parse("https://en.wikipedia.org/wiki/Barnum_effect");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 }
