@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         itgo2.setClass(MainActivity.this, Constellation1.class);
         itgo2.putExtra("m", m);
         itgo2.putExtra("d", d);
+        Toast.makeText(this,"你的生日是"+m+"月"+d+"號",Toast.LENGTH_SHORT).show();
         startActivity(itgo2);
 
     }
