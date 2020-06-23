@@ -57,11 +57,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.night_mode:
                 int nightMode = AppCompatDelegate.getDefaultNightMode();
                 if (nightMode == AppCompatDelegate.MODE_NIGHT_YES){
-                    Toast.makeText(this,"aaa",Toast.LENGTH_SHORT).show();
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 }
                 else {
-                    Toast.makeText(this,"bbb",Toast.LENGTH_SHORT).show();
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                 }
                 recreate();
