@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) {         //Option Menu OnCreate
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu1, menu);
         int nightMode = AppCompatDelegate.getDefaultNightMode();
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {           //Option Menu Item OnClick
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.about:
@@ -69,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 recreate();
                 return true;
+            case R.id.github:
+                Uri uri = Uri.parse("https://github.com/shashishajin/Android_Project");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }
