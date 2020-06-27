@@ -1,13 +1,20 @@
 package com.example.final_project;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -93,6 +100,41 @@ public class CheckAllConstellations extends AppCompatActivity {
         });
         helper.attachToRecyclerView(mRecyclerView);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {         //Option Menu OnCreate
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu3, menu);
+        int nightMode = AppCompatDelegate.getDefaultNightMode();
+        if (nightMode == AppCompatDelegate.MODE_NIGHT_YES){
+            menu.findItem(R.id.night_mode).setTitle(R.string.day_mode);
+        }
+        else{
+            menu.findItem(R.id.night_mode).setTitle(R.string.night_mode);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {           //Option Menu Item OnClick
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.night_mode:
+                int nightMode = AppCompatDelegate.getDefaultNightMode();
+                if (nightMode == AppCompatDelegate.MODE_NIGHT_YES) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+                recreate();
+                return true;
+            case R.id.setting:
+                SetColumnNumber(null);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     private void initializeData() {
         // Get the resources from the XML file.
         String[] ConstellationsList = getResources()
@@ -116,5 +158,14 @@ public class CheckAllConstellations extends AppCompatActivity {
 
     public void resetSports(View view) {
         initializeData();
+    }
+
+    public void SetColumnNumber (View view){
+        //以對話框確認是否要關閉視窗
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final View customLayout = getLayoutInflater().inflate(R.layout.dialog_multi_column, null);
+        builder.setView(customLayout);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
