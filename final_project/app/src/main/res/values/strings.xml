@@ -9,7 +9,11 @@
     <string name="night_mode">Night Mode</string>
     <string name="day_mode">Day Mode</string>
     <string name="github">Github</string>
-
+    <string name="multi_column">Multi-column</string>
+    <string name="landscape">Landscape</string>
+    <string name="portrait">Portrait</string>
+    <string name="settting">Setting</string>
+    <string name="setttingcolumn">Setting</string>
     <string-array name="constellations_titles">
         <item>牡羊座</item>
         <item>金牛座</item>

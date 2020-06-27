@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Trace;
 import android.transition.Explode;
 import android.transition.Fade;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -69,10 +70,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 recreate();
                 return true;
+            case R.id.setting:
+                SetColumnNumber(null);
+                return true;
             case R.id.github:
                 Uri uri = Uri.parse("https://github.com/shashishajin/Android_Project");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -151,9 +156,32 @@ public class MainActivity extends AppCompatActivity {
         adb.show();
     }
 
-    public void Cure(View view){
-        Uri uri = Uri.parse("https://en.wikipedia.org/wiki/Barnum_effect");
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
+    public void SetColumnNumber (View view){
+        //以對話框確認是否要關閉視窗
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final View customLayout = getLayoutInflater().inflate(R.layout.dialog_multi_column, null);
+        builder.setView(customLayout);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        /*AlertDialog.Builder adb = new AlertDialog.Builder(MainActivity.this);
+        adb.setTitle("確認視窗");
+        adb.setIcon(R.mipmap.ic_launcher);
+        adb.setMessage("確定要結束應用程式嗎?");
+        adb.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        adb.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        adb.show();*/
+        /*AlertDialog.Builder adb = new AlertDialog.Builder(MainActivity.this);
+        View dialogLayout = LayoutInflater.from(MainActivity.this).inflate(R.layout.dialog_multi_column, null);
+        adb.show();*/
     }
 }
