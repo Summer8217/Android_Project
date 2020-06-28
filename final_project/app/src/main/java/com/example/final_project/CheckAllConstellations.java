@@ -128,9 +128,6 @@ public class CheckAllConstellations extends AppCompatActivity {
                 }
                 recreate();
                 return true;
-            case R.id.setting:
-                SetColumnNumber(null);
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
