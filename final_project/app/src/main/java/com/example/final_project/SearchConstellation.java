@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Constellation1 extends AppCompatActivity {
+public class SearchConstellation extends AppCompatActivity {
     TextView txvANS,txvDate,title1,content1,title2,content2,title3,content3,title4,content4,title5,content5;
     int m,d;
     ImageView imageView;

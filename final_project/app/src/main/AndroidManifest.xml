@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Constellation1"
+        <activity android:name=".SearchConstellation"
             android:label = "Your Constellation"
             android:parentActivityName=".MainActivity">
             <meta-data

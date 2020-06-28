@@ -4,22 +4,18 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Trace;
-import android.transition.Explode;
-import android.transition.Fade;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import javax.xml.transform.TransformerConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
     public static final String ANIMATION = "Animation";
@@ -27,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String FADE_TRANSITION = "Fade Transition";
     Spinner spM, spD;
     public static final int TEXT_REQUEST = 1;
-    int m,d;
+    int m,d,idM,idD;
+    private static final String sharedPrefFile = "com.example.final_project";
 
 
     @Override
@@ -37,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         spM = findViewById(R.id.spinnerM);
         spD = findViewById(R.id.spinnerD);
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {         //Option Menu OnCreate
@@ -85,12 +81,13 @@ public class MainActivity extends AppCompatActivity {
         String[] Sd = getResources().getStringArray(R.array.date);
 
         //取得被選擇的項目編號(各個選單有各自的編號)
-        int idM=spM.getSelectedItemPosition();
-        int idD=spD.getSelectedItemPosition();
+        idM=spM.getSelectedItemPosition();
+        idD=spD.getSelectedItemPosition();
 
         //取的對應到的值
         m = Integer.parseInt(Sm[idM]);
         d = Integer.parseInt(Sd[idD]);
+
 
         //錯誤日期的判斷
         //4 6 9 11 月沒有31號
@@ -109,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     public void goto2() {
         //將日期傳至下一個頁面
         Intent itgo2 = new Intent();
-        itgo2.setClass(MainActivity.this, Constellation1.class);
+        itgo2.setClass(MainActivity.this, SearchConstellation.class);
         itgo2.putExtra("m", m);
         itgo2.putExtra("d", d);
         Toast.makeText(this,"你的生日是"+m+"月"+d+"號",Toast.LENGTH_SHORT).show();
@@ -152,6 +149,5 @@ public class MainActivity extends AppCompatActivity {
         });
         adb.show();
     }
-
 
 }
